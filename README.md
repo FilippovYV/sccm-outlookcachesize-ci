@@ -4,11 +4,9 @@
 
 По умолчанию Outlook выбирает размер кэша (глубину хранения) в зависимости от размера диска.
 
-Hard drives up to 32Gb in size, default to 1 month
-
-Hard drives bigger than 32GB, but less than 64 GB, default to 3 months
-
-Hard drives 64GB and larger, default to 12 months
+- Hard drives up to 32Gb in size, default to 1 month
+- Hard drives bigger than 32GB, but less than 64 GB, default to 3 months
+- Hard drives 64GB and larger, default to 12 months
 
 Это хорошо работает, если на компьютере только один пользователь, но если пользователей 5-10, то на 256GB SSD диске всё место уходит под кэш.
 Можно отключить Exchange Cached Mode, но тогда пользовательский опыт изрядно ухудшается. Мне нужен был способ управления размером кэша.
