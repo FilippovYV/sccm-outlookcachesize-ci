@@ -1,6 +1,11 @@
-$EmailToKeep = [byte[]](03,00,00,00)
-$EmailToKeepString = $EmailToKeep -join ''
+# Size of Outlook Cache 
+$EmailToKeepMonths=3
+
+#Construct binary value and then converting it to string for comparison
+$EmailToKeepString = [byte[]]($EmailToKeepMonths,00,00,00) -join ''
+#Regsitry name
 $EmailToKeepRegistry = '00036649'
+#Registry key for profiles store. Outlook 2016/2019/365
 $Outlook16Profiles = 'HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles\'
 
 $EmailToKeepInSync = $true
