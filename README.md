@@ -37,7 +37,7 @@ Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | Where-Object { $_.Pr
 Значение вида 00036649 : {XX, 0, 0, 0} покажет глубину хранения в XX месяцев.
 
 Пример вывода:
-![](./ExampleOutput2.PNG)
+![](./ExampleOutput.PNG)
 
 
 На основе этого сделаны Configuration Item/Baseline для ECM(ConfigMgr).
