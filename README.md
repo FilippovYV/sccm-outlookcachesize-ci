@@ -13,7 +13,11 @@
 
 Для этого есть административные шаблоны групповых политик, также можно напрямую править реестр в [Software\Policies], но этот метод не очень хороший.
 Обычно, если у нас не закачан в кэш весь почтовый ящик целиком, то можно получить дополнительные данные нажав на ссылку возле последнего сообщения - 
-Click here to view more on Microsoft Exchange. Но если глубина хранения ограничена политиками, то этой ссылки нет, дополнительные данные получить невозможно.
+Click here to view more on Microsoft Exchange.
+
+![](./ClickHereToVewMore.PNG)
+
+Но если глубина хранения ограничена политиками, то этой ссылки нет, дополнительные данные получить невозможно.
 От этого получается разрыв - например, политика архивации настроена на 1 год, т.е. все письма старше года уходят в архив. Если при этом ограничить глубину хранения, например, в 3 месяца,
 то мы не можем в Outlook увидеть письма, в периоде от 3-х месяцев до года. Эта проблема давняя и она до сих пор не решена.
 
@@ -31,6 +35,10 @@ $Outlook16Profiles = 'HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\P
 Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | Where-Object { $_.Property -eq $EmailToKeepRegistry } | ForEach-Object { (Get-ItemProperty -Path Registry::$_ -Name $EmailToKeepRegistry) }
 ````
 Значение вида 00036649 : {XX, 0, 0, 0} покажет глубину хранения в XX месяцев.
+
+Пример вывода:
+![](./ExampleOutput.PNG)
+
 
 На основе этого сделаны Configuration Item/Baseline для ECM(ConfigMgr).
 
