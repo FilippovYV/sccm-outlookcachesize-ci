@@ -43,6 +43,7 @@ Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | Where-Object { $_.Pr
 На основе этого сделаны Configuration Item/Baseline для ECM(ConfigMgr).
 
 Скрипт OutlookCacheSizeDetection.ps1 проверяет настройки пользователя и возвращает $True если настройки правильные и $False если глубина хранения отличается от заданной.
+
 Скрипт OutlookCacheSizeRemediate.ps1 прописывает нужные настройки в реестр для текущего пользователя.
 
 В обоих скриптах переменная $EmailToKeepMonths задаёт глубину хранения в месяцах.
