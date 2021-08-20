@@ -32,7 +32,11 @@ Click here to view more on Microsoft Exchange.
 ````powershell
 $EmailToKeepRegistry = '00036649'
 $Outlook16Profiles = 'HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles\'
-Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | Where-Object { $_.Property -eq $EmailToKeepRegistry } | ForEach-Object { (Get-ItemProperty -Path Registry::$_ -Name $EmailToKeepRegistry) }
+Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | 
+  Where-Object { $_.Property -eq $EmailToKeepRegistry } |
+  ForEach-Object { 
+    (Get-ItemProperty -Path Registry::$_ -Name $EmailToKeepRegistry) 
+  }
 ````
 Значение вида 00036649 : {XX, 0, 0, 0} покажет глубину хранения в XX месяцев.
 
