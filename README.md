@@ -30,8 +30,8 @@ Click here to view more on Microsoft Exchange.
 
 Посмотреть настройки кэша для текущего пользователя можно так:
 ````powershell
-$EmailToKeepRegistry = '00036649'
 $Outlook16Profiles = 'HKEY_CURRENT_USER\Software\Microsoft\Office\16.0\Outlook\Profiles\'
+$EmailToKeepRegistry = '00036649'
 Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | 
   Where-Object { $_.Property -eq $EmailToKeepRegistry } |
   ForEach-Object { 
