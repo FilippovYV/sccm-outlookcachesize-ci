@@ -35,7 +35,7 @@ $EmailToKeepRegistry = '00036649'
 Get-ChildItem -Path Registry::$Outlook16Profiles -Recurse | 
   Where-Object { $_.Property -eq $EmailToKeepRegistry } |
   ForEach-Object { 
-    (Get-ItemProperty -Path Registry::$_ -Name $EmailToKeepRegistry) 
+    Get-ItemProperty -Path Registry::$_ -Name $EmailToKeepRegistry
   }
 ````
 Значение вида 00036649 : {XX, 0, 0, 0} покажет глубину хранения в XX месяцев.
